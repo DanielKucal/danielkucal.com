@@ -1,4 +1,25 @@
 <h2>Projects</h2>
 <div *ngFor="#project of projects | async" class="project">
-    <span>{{ project.name }}</span>
+    <span class="image">
+        <a href="{{project.link}}">
+            <img class="img-rounded" src="{{project.imageUrl}}"/>
+        </a>
+    </span>
+    <span class="description">
+        <span class="title">
+            <a href="{{project.link}}">{{project.name}}</a>
+        </span>
+        {{project.subname}}
+    </span>
+
+    <span class="range">
+            <b>Description:</b> <span [innerHTML]="project.description"></span>
+    </span>
+
+    <span class="used-techs">
+        <b>Technology stack:</b>
+        <ul class="list-inline">
+            <li *ngFor="#tech of project.technologies">{{tech}}</li>
+        </ul>
+    </span>
 </div>
