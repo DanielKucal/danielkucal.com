@@ -2,7 +2,7 @@
 <head>
     <title>Angular 2 QuickStart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="app/css/style.css">
     <meta charset="utf-8">
     <!-- 1. Load libraries -->
     <!-- IE required polyfills, in this exact order -->
@@ -14,6 +14,19 @@
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <!-- Bootstrap 3 -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<!-- 3. Display the application -->
+<body>
+    <angular-app><div class="loading">Loading</div></angular-app>
+
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
@@ -27,9 +40,5 @@
         System.import('app/js/main')
                 .then(null, console.error.bind(console));
     </script>
-</head>
-<!-- 3. Display the application -->
-<body>
-<angular-app>Loading...</angular-app>
 </body>
 </html>
