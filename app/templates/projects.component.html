@@ -1,4 +1,6 @@
-<h2>Projects</h2>
+<div id="tags">
+    <tags></tags>
+</div>
 <div *ngFor="#project of projects | async" class="project">
     <span class="image">
         <a href="{{project.link}}">
@@ -13,7 +15,7 @@
     </span>
 
     <span class="range">
-            <b>Description:</b> <span [innerHTML]="project.description"></span>
+        <b>Description:</b> <span [innerHTML]="project.description"></span>
     </span>
 
     <span class="used-techs">
