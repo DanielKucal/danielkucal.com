@@ -118,12 +118,12 @@ strong {
     margin-left: 5px;
 }
 
-.project .description .title {
+.project .description .title, .title {
     font-family: cursive;
     font-weight: bold;
 }
 
-.project .description .title a {
+.project .description .title a, .title {
     color: #fff;
 }
 
@@ -147,7 +147,7 @@ strong {
 .project .used-techs ul li {
     background: linear-gradient(rgba(148, 148, 148, 0.85), #2F2F2F);
     border-radius: 5px;
-    margin-bottom: 2px;
+    margin: 3px 2px;
 }
 
 progress {
