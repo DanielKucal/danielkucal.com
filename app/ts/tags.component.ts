@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component, OnInit, Output, EventEmitter} from 'angular2/core';
 import {Observable} from 'rxjs/Observable';
 import {ProjectsService} from './projects.service';
 import {ToIterablePipe} from './pipes/to-iterable.pipe';
@@ -15,6 +15,8 @@ import {SortByValuesPipe} from './pipes/sort-by-values.pipe';
 
 export class TagsComponent implements OnInit {
     public tags : Promise<Object>;
+    @Output() onTagChoice = new EventEmitter<String>();
+
     constructor(private _projectsService: ProjectsService) {}
 
      private getTags(){
@@ -40,5 +42,9 @@ export class TagsComponent implements OnInit {
 
     ngOnInit(){
         this.tags = this.getTags();
+    }
+
+    chooseTag(tag:String){
+        this.onTagChoice.emit(tag);
     }
 }

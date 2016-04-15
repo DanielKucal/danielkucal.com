@@ -1,5 +1,5 @@
 <div id="tags" class="project">
-    <tags class="used-techs"></tags>
+    <tags class="used-techs" (onTagChoice)="onTagChoice($event)"></tags>
 </div>
 <div *ngFor="#project of projects | async" class="project">
     <span class="image">
