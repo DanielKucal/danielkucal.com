@@ -6,9 +6,11 @@ import {TagsComponent} from "./tags.component";
 @Component({
     selector: 'projects',
     templateUrl: 'app/templates/projects.component.html',
+    styleUrls: [ 'app/css/projects.css' ],
     directives: [
         TagsComponent
     ],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class ProjectsComponent implements OnInit {
