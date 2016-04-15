@@ -16,6 +16,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-shadow: #000 1px 1px 5px;
 }
 .loading:after {
     overflow: hidden;
