@@ -14,14 +14,12 @@ import {TagsComponent} from "./tags.component";
 })
 
 export class ProjectsComponent implements OnInit {
-    private _allProjects: Promise<Object[]>;
     public projects: Promise<Object[]>;
 
     constructor(private _projectsService: ProjectsService) {}
 
     getData(){
-        this._allProjects = this._projectsService.getData().toPromise();
-        this.projects = this._allProjects;
+        this.projects = this._projectsService.getProjects();
     }
 
     ngOnInit(){
@@ -30,9 +28,9 @@ export class ProjectsComponent implements OnInit {
 
     onTagChoice(tag: String){
         if (tag === null)
-            return this._allProjects;
+            return this._projectsService.getProjects();
         let chosenProjects = [];
-        this._allProjects
+        this._projectsService.getProjects()
             .then((projects) => {
                 chosenProjects = projects.filter((project) => {
                     console.log(project);

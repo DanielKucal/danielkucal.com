@@ -23,7 +23,7 @@ export class TagsComponent implements OnInit {
      private getTags(){
         return new Promise<Object>((resolve, reject) => {
             let tags = {};
-            this._projectsService.getData().toPromise()
+            this._projectsService.getProjects()
                 .then((projects) => {
                     for (var project of projects) {
                         for (var tag of project.technologies) {

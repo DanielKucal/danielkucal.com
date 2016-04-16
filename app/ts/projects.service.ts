@@ -5,6 +5,7 @@ import {Injectable} from 'angular2/core';
 
 @Injectable()
 export class ProjectsService {
+    private _projects: Promise<Object[]>;
     private _dataUrl = 'http://danielkucal.com/api/projects.json';
 
     constructor(private _http: Http) {}
@@ -14,6 +15,13 @@ export class ProjectsService {
             .get(this._dataUrl)
             .map(request => <Object[]> request.json())
             .catch(this.handleError);
+    }
+    
+    getProjects(): Promise<Object[]> {
+        if (this._projects === undefined || this._projects === null) {
+            this._projects = this.getData().toPromise();
+        }
+        return this._projects;
     }
 
     private handleError (error: Response) {
