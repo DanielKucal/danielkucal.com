@@ -15,7 +15,7 @@ import {SortByValuesPipe} from './pipes/sort-by-values.pipe';
 
 export class TagsComponent implements OnInit {
     public tags : Promise<Object>;
-    public chosenTag: String = null;
+    public chosenTag: String = 'any';
     @Output() onTagChoice = new EventEmitter<String>();
 
     constructor(private _projectsService: ProjectsService) {}
@@ -36,6 +36,7 @@ export class TagsComponent implements OnInit {
                     }
                 })
                 .then(() => {
+                    this._projectsService.getProjects().then((data) => tags['any'] = data.length);
                     resolve(tags);
                 });
         });

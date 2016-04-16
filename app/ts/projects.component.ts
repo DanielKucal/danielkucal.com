@@ -27,7 +27,7 @@ export class ProjectsComponent implements OnInit {
     }
 
     onTagChoice(tag: String){
-        if (tag === null)
+        if (tag === null || tag === 'any')
             return this._projectsService.getProjects();
         let chosenProjects = [];
         this._projectsService.getProjects()
