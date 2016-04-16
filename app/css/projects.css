@@ -1,3 +1,8 @@
-#tags .used-techs ul li {
+#tags .used-techs ul li:hover {
     cursor: pointer;
+    box-shadow: #28FFF7 0px 0px 5px;
+}
+
+#tags .used-techs ul li.active {
+    background: linear-gradient(#2F2F2F, rgba(148, 148, 148, 0.85));
 }
