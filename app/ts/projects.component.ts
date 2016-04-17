@@ -33,13 +33,11 @@ export class ProjectsComponent implements OnInit {
         this._projectsService.getProjects()
             .then((projects) => {
                 chosenProjects = projects.filter((project) => {
-                    console.log(project);
                     return (project.technologies.indexOf(tag) > -1);
                 })
             })
             .then(() => {
                 this.projects = new Promise<Object[]>((resolve) => resolve(chosenProjects));
-                console.log(chosenProjects);
             });
     }
 }
