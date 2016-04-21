@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
-import {Observable} from 'rxjs/Observable';
 import {ProjectsService} from './projects.service';
 import {TagsComponent} from "./tags.component";
 

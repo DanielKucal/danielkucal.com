@@ -1,5 +1,4 @@
 import {Component, OnInit, Output, EventEmitter} from 'angular2/core';
-import {Observable} from 'rxjs/Observable';
 import {ProjectsService} from './projects.service';
 import {ToIterablePipe} from './pipes/to-iterable.pipe';
 import {SortByValuesPipe} from './pipes/sort-by-values.pipe';
