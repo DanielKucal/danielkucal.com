@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     constructor(private _translate: TranslateService) { }
 
     ngOnInit() {
-        var userLang = navigator.language.split('-')[0]; // use navigator lang if available
+        var userLang = localStorage.getItem('lang') || navigator.language.split('-')[0]; // use navigator lang if available
         if (!this.languages.hasOwnProperty(userLang)) {
             userLang = 'en';
         }
@@ -43,5 +43,6 @@ export class AppComponent implements OnInit {
     changeLang(newLang):void {
         this.chosenLang = newLang;
         this._translate.use(newLang);
+        localStorage.setItem('lang', newLang);
     }
 }
