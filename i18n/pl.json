@@ -1,3 +1,9 @@
 {
-
+  "HOMEPAGE": "strona domowa",
+  "ABOUT": "O mnie",
+  "CONTACT": "Kontakt",
+  "CHOSEN_PROJECTS": "Wybrane projekty",
+  "DESCRIPTION": "Opis",
+  "TECHNOLOGY_STACK": "Wykorzystane narzędzia",
+  "USED_TECHNOLOGIES": "Używane technologie"
 }
