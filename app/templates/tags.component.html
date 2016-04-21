@@ -1,4 +1,4 @@
-<span class="title">Used technologies:</span>
+<span class="title">{{ 'USED_TECHNOLOGIES' | translate }}:</span>
 <ul class="list-inline">
     <li *ngFor="#tag of tags | async | toIterable | sortByValues:'desc'" [ngClass]="{active: (tag.key === chosenTag)}">
         <span class="tag-container" (click)='chooseTag(tag.key)' title="Show projects using {{tag.key}} technology">

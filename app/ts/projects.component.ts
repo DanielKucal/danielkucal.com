@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
 import {ProjectsService} from './projects.service';
 import {TagsComponent} from "./tags.component";
+import {TranslatePipe} from "ng2-translate/ng2-translate";
 
 @Component({
     selector: 'projects',
@@ -8,6 +9,9 @@ import {TagsComponent} from "./tags.component";
     styleUrls: [ 'app/css/projects.css' ],
     directives: [
         TagsComponent
+    ],
+    pipes: [
+        TranslatePipe
     ],
     encapsulation: ViewEncapsulation.None
 })

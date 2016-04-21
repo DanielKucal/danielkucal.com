@@ -15,11 +15,11 @@
     </span>
 
     <span class="range">
-        <b>Description:</b> <span [innerHTML]="project.description"></span>
+        <b>{{ 'DESCRIPTION' | translate }}:</b> <span [innerHTML]="project.description"></span>
     </span>
 
     <span class="used-techs">
-        <b>Technology stack:</b>
+        <b>{{ 'TECHNOLOGY_STACK' | translate }}:</b>
         <ul class="list-inline">
             <li *ngFor="#tech of project.technologies">{{tech}}</li>
         </ul>
