@@ -22,7 +22,7 @@ import {TranslatePipe, TranslateService} from "ng2-translate/ng2-translate";
 })
 export class AppComponent implements OnInit {
     public languages = {
-        eng: "English",
+        en: "English",
         pl: "Polski"
     };
     public chosenLang:String = null;
@@ -42,5 +42,6 @@ export class AppComponent implements OnInit {
 
     changeLang(newLang):void {
         this.chosenLang = newLang;
+        this._translate.use(newLang);
     }
 }
