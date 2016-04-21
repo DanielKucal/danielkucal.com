@@ -167,3 +167,28 @@ progress {
 .list-inline>li {
     padding: 1px 5px;
 }
+
+.language-picker .languages {
+    position: absolute;
+}
+.language-picker {
+    width: 90px;
+    color: #87C2FF;
+    padding: 3px 1px;
+}
+.language-picker .option {
+    font-weight: bold;
+    display: block;
+    padding: 3px 1px;
+}
+.language-picker .option img {
+    margin-left: 3px;
+}
+.language-picker .option:hover, .language-picker .option:active {
+    cursor: pointer;
+    background: radial-gradient(rgba(0, 121, 224, 0.6), rgba(0, 0, 0, 0.25));
+}
+
+.clickable {
+    cursor: pointer;
+}
