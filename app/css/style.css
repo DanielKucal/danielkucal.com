@@ -55,6 +55,7 @@ body {
 
 #social {
     margin: 30px 10px;
+    display: inline-flex;
 }
 #social a img {
     padding: 2px;
