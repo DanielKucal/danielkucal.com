@@ -3,12 +3,14 @@ import {ProjectsService} from './projects.service';
 import {ProjectsComponent} from './projects.component';
 import {LanguagePickerComponent} from "./language-picker.component";
 import {TranslatePipe, TranslateService} from "ng2-translate/ng2-translate";
+import {LanguageService} from "./language.service";
 
 @Component({
     selector: 'angular-app',
     templateUrl: 'app/templates/app.component.html',
     providers: [
-        ProjectsService
+        ProjectsService,
+        LanguageService
     ],
     directives: [
         ProjectsComponent,
@@ -19,28 +21,17 @@ import {TranslatePipe, TranslateService} from "ng2-translate/ng2-translate";
     ]
 })
 export class AppComponent implements OnInit {
-    public languages = {
-        en: "English",
-        pl: "Polski"
-    };
-    public chosenLang:String = null;
 
-    constructor(private _translate: TranslateService) { }
+    constructor(private _translate: TranslateService, private _languageService:LanguageService) { 
+        this._languageService.langChanged$.subscribe(event => this.changeLang(event));
+    }
 
     ngOnInit() {
-        var userLang = localStorage.getItem('lang') || navigator.language.split('-')[0]; // use navigator lang if available
-        if (!this.languages.hasOwnProperty(userLang)) {
-            userLang = 'en';
-        }
-        // this language will be used as a fallback when a translation isn't found in the current language
         this._translate.setDefaultLang('en');
-        // the lang to use, if the lang isn't available, it will use the current loader to get them
-        this._translate.use(userLang);
+        this._translate.use(this._languageService.getLanguage());
     }
 
     changeLang(newLang):void {
-        this.chosenLang = newLang;
         this._translate.use(newLang);
-        localStorage.setItem('lang', newLang);
     }
 }

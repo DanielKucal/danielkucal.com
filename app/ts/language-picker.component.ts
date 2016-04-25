@@ -1,5 +1,6 @@
-import {Component, Input, Output, EventEmitter} from "angular2/core";
+import {Component} from "angular2/core";
 import {ToIterablePipe} from "./pipes/to-iterable.pipe";
+import {LanguageService} from "./language.service";
 
 @Component({
     selector: 'language-picker',
@@ -19,12 +20,15 @@ import {ToIterablePipe} from "./pipes/to-iterable.pipe";
     ]
 })
 export class LanguagePickerComponent {
-    @Input() languages: Object;
-    @Output() langChange: EventEmitter = new EventEmitter();
+    public languages:Object;
     public clicked:Boolean = false;
 
+    constructor(private _languageService:LanguageService){
+        this.languages = this._languageService.getLanguages();
+    }
+
     select(value) {
-        this.langChange.emit(value);
+        this._languageService.setLang(value);
         this.toggle();
     }
 

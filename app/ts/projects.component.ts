@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from 'angular2/core';
 import {ProjectsService} from './projects.service';
 import {TagsComponent} from "./tags.component";
 import {TranslatePipe} from "ng2-translate/ng2-translate";
+import {LanguageService} from "./language.service";
 
 @Component({
     selector: 'projects',
@@ -18,11 +19,15 @@ import {TranslatePipe} from "ng2-translate/ng2-translate";
 
 export class ProjectsComponent implements OnInit {
     public projects: Promise<Object[]>;
+    private _tag:String = null;
 
-    constructor(private _projectsService: ProjectsService) {}
+    constructor(private _projectsService: ProjectsService, private _languageService:LanguageService) {
+        this._languageService.langChanged$.subscribe(event => this.onLangChange(event));
+    }
 
-    getData(){
-        this.projects = this._projectsService.getProjects();
+    getData():Promise<Object[]>{
+        this.projects = this._projectsService.getProjects(this._languageService.getLanguage());
+        return this.projects;
     }
 
     ngOnInit(){
@@ -32,12 +37,13 @@ export class ProjectsComponent implements OnInit {
     onTagChoice(tag: String){
         if (tag === null || tag === 'any') {
             this.projects = new Promise(
-                resolve => resolve(this._projectsService.getProjects())
+                resolve => resolve(this.getData())
             );
             return;
         }
+        this._tag = tag;
         let chosenProjects = [];
-        this._projectsService.getProjects()
+        this.getData()
             .then((projects) => {
                 chosenProjects = projects.filter((project) => {
                     return (project.technologies.indexOf(tag) > -1);
@@ -46,5 +52,10 @@ export class ProjectsComponent implements OnInit {
             .then(() => {
                 this.projects = new Promise<Object[]>((resolve) => resolve(chosenProjects));
             });
+    }
+
+    onLangChange(newLang){
+        this.getData();
+        this.onTagChoice(this._tag);
     }
 }
