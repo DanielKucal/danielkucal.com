@@ -1,6 +1,6 @@
-import {Component, OnInit} from 'angular2/core';
-import {ProjectsService} from './projects.service';
-import {ProjectsComponent} from './projects.component';
+import {Component, OnInit} from "angular2/core";
+import {ProjectsService} from "./projects.service";
+import {ProjectsComponent} from "./projects.component";
 import {LanguagePickerComponent} from "./language-picker.component";
 import {TranslatePipe, TranslateService} from "ng2-translate/ng2-translate";
 import {LanguageService} from "./language.service";
@@ -22,8 +22,8 @@ import {LanguageService} from "./language.service";
 })
 export class AppComponent implements OnInit {
 
-    constructor(private _translate: TranslateService, private _languageService:LanguageService) { 
-        this._languageService.langChanged$.subscribe(event => this.changeLang(event));
+    constructor(private _translate:TranslateService, private _languageService:LanguageService) {
+        this._languageService.langChanged$.subscribe(event => this.onLangChange(event));
     }
 
     ngOnInit() {
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         this._translate.use(this._languageService.getLanguage());
     }
 
-    changeLang(newLang):void {
+    onLangChange(newLang):void {
         this._translate.use(newLang);
     }
 }

@@ -1,7 +1,7 @@
-import {Component, OnInit, Output, EventEmitter} from 'angular2/core';
-import {ProjectsService} from './projects.service';
-import {ToIterablePipe} from './pipes/to-iterable.pipe';
-import {SortByValuesPipe} from './pipes/sort-by-values.pipe';
+import {Component, OnInit, Output, EventEmitter} from "angular2/core";
+import {ProjectsService} from "./projects.service";
+import {ToIterablePipe} from "./pipes/to-iterable.pipe";
+import {SortByValuesPipe} from "./pipes/sort-by-values.pipe";
 import {TranslatePipe} from "ng2-translate/ng2-translate";
 
 @Component({
