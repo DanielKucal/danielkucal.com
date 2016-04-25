@@ -6,5 +6,6 @@
   "DESCRIPTION": "Description",
   "TECHNOLOGY_STACK": "Technology stack",
   "USED_TECHNOLOGIES": "Used technologies",
-  "SHOW_PROJECTS_USING_X_TECHNOLOGY": "Show projects using {{technology}} technology"
+  "SHOW_PROJECTS_USING_X_TECHNOLOGY": "Show projects using {{technology}} technology",
+  "COOKIES_INFO": "This site uses localstorage and cookies for statistical purposes."
 }
