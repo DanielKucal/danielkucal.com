@@ -1,5 +1,4 @@
 import {Component, OnInit} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
 import {ProjectsService} from './projects.service';
 import {ProjectsComponent} from './projects.component';
 import {LanguagePickerComponent} from "./language-picker.component";
@@ -9,8 +8,7 @@ import {TranslatePipe, TranslateService} from "ng2-translate/ng2-translate";
     selector: 'angular-app',
     templateUrl: 'app/templates/app.component.html',
     providers: [
-        ProjectsService,
-        HTTP_PROVIDERS
+        ProjectsService
     ],
     directives: [
         ProjectsComponent,
