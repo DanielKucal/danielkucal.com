@@ -4,17 +4,23 @@ import {ProjectsComponent} from "./projects.component";
 import {LanguagePickerComponent} from "./language-picker.component";
 import {TranslatePipe, TranslateService} from "ng2-translate/ng2-translate";
 import {LanguageService} from "./language.service";
+import {PersonalInformationService} from "./personal-information.service";
+import {ContactComponent} from "./contact.component";
+import {AboutComponent} from "./about.component";
 
 @Component({
     selector: 'angular-app',
     templateUrl: 'app/templates/app.component.html',
     providers: [
         ProjectsService,
-        LanguageService
+        LanguageService,
+        PersonalInformationService
     ],
     directives: [
         ProjectsComponent,
-        LanguagePickerComponent
+        LanguagePickerComponent,
+        ContactComponent,
+        AboutComponent
     ],
     pipes: [
         TranslatePipe
