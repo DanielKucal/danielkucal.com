@@ -2,23 +2,23 @@
     <tags class="used-techs" (onTagChoice)="onTagChoice($event)"></tags>
 </div>
 <div *ngFor="#project of projects | async" class="project">
-    <span class="image">
-        <a href="{{project.link}}">
+    <span *ngIf="project.imageUrl" class="image">
+        <a href="{{project.link}}" target="_blank">
             <img class="img-rounded" src="{{project.imageUrl}}"/>
         </a>
     </span>
     <span class="description">
         <span class="title">
-            <a href="{{project.link}}">{{project.name}}</a>
+            <a href="{{project.link}}" target="_blank">{{project.name}}</a>
         </span>
         {{project.subname}}
     </span>
 
-    <span class="range">
+    <span *ngIf="project.description" class="range">
         <b>{{ 'DESCRIPTION' | translate }}:</b> <span [innerHTML]="project.description"></span>
     </span>
 
-    <span class="used-techs">
+    <span *ngIf="project.technologies" class="used-techs">
         <b>{{ 'TECHNOLOGY_STACK' | translate }}:</b>
         <ul class="list-inline">
             <li *ngFor="#tech of project.technologies">{{tech}}</li>
