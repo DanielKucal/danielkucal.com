@@ -4,7 +4,7 @@ import {Injectable, EventEmitter} from "angular2/core";
 @Injectable()
 export class LanguageService {
     public langChanged$:EventEmitter<String>;
-    private _currentLanguage:String;
+    private _currentLanguage:string;
     private _languages= {
         en: "English",
         pl: "Polski"
@@ -18,7 +18,7 @@ export class LanguageService {
         }
     }
 
-    public setLang(newLanguage:String):void{
+    public setLang(newLanguage:string):void{
         if (newLanguage === this._currentLanguage)
             return;
         this._currentLanguage = newLanguage;
@@ -26,7 +26,7 @@ export class LanguageService {
         localStorage.setItem('lang', newLanguage);
     }
     
-    public getLanguage():String{
+    public getLanguage():string{
         return this._currentLanguage;
     }
 
