@@ -21,9 +21,9 @@ export class AboutComponent implements OnInit {
         return this._personalInformationService.getInformation();
     }
 
-    filterLang(newLang:String = null){
+    filterLang(newLang:string = null){
         this.getData().then(data => {
-            this.about = data.about[newLang || this._languageService.getLanguage()];
+            this.about = data['about'][newLang || this._languageService.getLanguage()];
         });
     }
 }

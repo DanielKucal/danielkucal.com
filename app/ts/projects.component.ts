@@ -19,7 +19,7 @@ import {LanguageService} from "./language.service";
 
 export class ProjectsComponent implements OnInit {
     public projects: Promise<Object[]>;
-    private _tag:String = null;
+    private _tag:string = null;
 
     constructor(private _projectsService: ProjectsService, private _languageService:LanguageService) {
         this._languageService.langChanged$.subscribe(event => this.onLangChange(event));
@@ -34,7 +34,7 @@ export class ProjectsComponent implements OnInit {
         this.getData();
     }
 
-    onTagChoice(tag: String){
+    onTagChoice(tag:string){
         if (tag === null || tag === 'any') {
             this.projects = new Promise(
                 resolve => resolve(this.getData())
@@ -46,7 +46,7 @@ export class ProjectsComponent implements OnInit {
         this.getData()
             .then((projects) => {
                 chosenProjects = projects.filter((project) => {
-                    return (project.technologies.indexOf(tag) > -1);
+                    return (project['technologies'].indexOf(tag) > -1);
                 })
             })
             .then(() => {

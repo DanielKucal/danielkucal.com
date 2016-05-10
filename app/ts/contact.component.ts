@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
 
     ngOnInit(){
         this.getData().then(data => {
-            this.contacts = data.contact;
+            this.contacts = data['contact'];
         });
     }
 

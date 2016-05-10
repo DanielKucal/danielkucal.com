@@ -27,7 +27,7 @@ export class TagsComponent implements OnInit {
             this._projectsService.getProjects()
                 .then((projects) => {
                     for (var project of projects) {
-                        for (var tag of project.technologies) {
+                        for (var tag of project['technologies']) {
                             if (tags.hasOwnProperty(tag)) {
                                 tags[tag]++;
                             } else {
