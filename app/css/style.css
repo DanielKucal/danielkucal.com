@@ -11,9 +11,9 @@ body {
     /*color: #FFF;*/
 }
 
-.loading {
+#loader {
     color: #369;
-    font-size: 250%;
+    font-size: 5rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     position: fixed;
@@ -21,6 +21,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: #000 1px 1px 5px;
+    text-align: center;
 }
 .loading:after {
     overflow: hidden;
@@ -31,6 +32,22 @@ body {
     content: "\2026"; /* ascii code for the ellipsis character */
     width: 0px;
 }
+.poweredby {
+    font-size: 3rem;
+
+}
+.poweredby:after {
+    content: '';
+    background: url("https://angular.io/resources/images/logos/angular2/angular.svg") top center no-repeat;
+    background-size: contain;
+    height: 225px;
+    width: 100%;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+}
+
 @keyframes ellipsis {
     to {
         width: 50px;
