@@ -2,10 +2,11 @@
   "HOMEPAGE": "homepage",
   "ABOUT": "About",
   "CONTACT": "Contact",
+  "CONTACT_ME": "If you think I can help you - feel free to contact me.",
   "CHOSEN_PROJECTS": "Chosen projects",
   "DESCRIPTION": "Description",
   "TECHNOLOGY_STACK": "Technology stack",
-  "USED_TECHNOLOGIES": "Used technologies",
+  "USED_TECHNOLOGIES": "Filter by used technologies",
   "SHOW_PROJECTS_USING_X_TECHNOLOGY": "Show projects using {{technology}} technology",
   "COOKIES_INFO": "This site uses localstorage and cookies for statistical purposes."
 }

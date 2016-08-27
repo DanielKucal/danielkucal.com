@@ -2,10 +2,11 @@
   "HOMEPAGE": "strona domowa",
   "ABOUT": "O mnie",
   "CONTACT": "Kontakt",
+  "CONTACT_ME": "Jeśli sądzisz, że mogę Ci pomóc - zapraszam do kontaktu.",
   "CHOSEN_PROJECTS": "Wybrane projekty",
   "DESCRIPTION": "Opis",
   "TECHNOLOGY_STACK": "Wykorzystane narzędzia",
-  "USED_TECHNOLOGIES": "Wykorzytane technologie",
+  "USED_TECHNOLOGIES": "Filtrowanie po wykorzytanych technologiach",
   "SHOW_PROJECTS_USING_X_TECHNOLOGY": "Pokaż projekty używające technologii {{technology}}",
   "COOKIES_INFO": "Ta strona używa przechowywania lokalnego i ciasteczek do prowadzenia statystyk."
 }
