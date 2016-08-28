@@ -5,6 +5,8 @@ import {Pipe, PipeTransform} from 'angular2/core';
 })
 export class EmailPipe implements PipeTransform {
     transform(email:String):String {
-        return '<a href="mailto:' + email + '">' + email + '</a>';
+        return '<a href="mailto:' + email + '" ' +
+            'title="Send email to ' + email + '">' +
+            email + '</a>';
     }
 }
