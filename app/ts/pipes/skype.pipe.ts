@@ -5,6 +5,8 @@ import {Pipe, PipeTransform} from 'angular2/core';
 })
 export class SkypePipe implements PipeTransform {
     transform(nickname:String):String {
-        return '<a href="skype:' + nickname + '?chat">' + nickname + '</a>';
+        return '<a href="skype:' + nickname + '?chat" ' +
+            'title="Chat with ' + nickname + ' via Skype">' +
+            nickname + '</a>';
     }
 }
